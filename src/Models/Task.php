@@ -34,5 +34,21 @@ class Task
         }
     }
 
+    public function updateTask($id): int
+    {
+        try {
+            $query = $this->db->prepare(
+                "UPDATE `tasks` SET `status` = 'Done' WHERE `id` = :id;"
+            );
+
+            $query->bindParam(':id', $id['id']);
+            $query->execute();
+            return 1;
+
+        } catch (\PDOException $exception) {
+            return 0;
+        }
+    }
+
 
 }

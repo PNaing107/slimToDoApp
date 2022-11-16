@@ -59,7 +59,7 @@
                     <td>{$task['created']}</td>
                     <td>{$task['due']}</td>
                     <td></td>
-                    <td><button type='button' name='id' value='{$task['id']}' formaction='/delete'>Delete</button></td>
+                    <td><form><button type='submit' name='id' value='{$task['id']}' formaction='/delete' formmethod='post'>Delete</button></form></td>
                     </tr>";
             } else {
                 echo "<tr>
@@ -67,8 +67,8 @@
                     <td>{$task['status']}</td>
                     <td>{$task['created']}</td>
                     <td>{$task['due']}</td>
-                    <td><button type='button' name='id' value='{$task['id']}' formaction='/status'>Done</button></td>
-                    <td><button type='button' name='id' value='{$task['id']}' formaction='/delete'>Delete</button></td>
+                    <td><form><button type='submit' name='id' value='{$task['id']}' formaction='/status' formmethod='post'>Done</button></form></td>
+                    <td><form><button type='submit' name='id' value='{$task['id']}' formaction='/delete' formmethod='post'>Delete</button></form></td>
                     </tr>";
             }
         }

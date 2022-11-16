@@ -1,7 +1,11 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\AddTaskAPIController;
+use App\Controllers\AddTaskHandlerController;
 use App\Controllers\CoursesAPIController;
+use App\Controllers\TasksAPIController;
+use App\Controllers\StatusAPIController;
 use Slim\App;
 use Slim\Views\PhpRenderer;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
@@ -17,5 +21,13 @@ return function (App $app) {
     });
 
     $app->get('/courses', CoursesAPIController::class);
+
+    $app->get('/tasks', TasksAPIController::class);
+
+    $app->get('/add', AddTaskAPIController::class);
+
+    $app->post('/add', AddTaskHandlerController::class);
+
+    $app->get('/status', TasksAPIController::class);
 
 };

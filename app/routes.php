@@ -28,6 +28,6 @@ return function (App $app) {
 
     $app->post('/add', AddTaskHandlerController::class);
 
-    $app->post('/status', TasksAPIController::class);
+    $app->post('/status', StatusAPIController::class);
 
 };

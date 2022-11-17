@@ -6,6 +6,7 @@ use App\Controllers\AddTaskHandlerController;
 use App\Controllers\CoursesAPIController;
 use App\Controllers\TasksAPIController;
 use App\Controllers\StatusAPIController;
+use App\Controllers\DeleteAPIController;
 use Slim\App;
 use Slim\Views\PhpRenderer;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
@@ -29,5 +30,7 @@ return function (App $app) {
     $app->post('/add', AddTaskHandlerController::class);
 
     $app->post('/status', StatusAPIController::class);
+
+    $app->post('/delete', DeleteAPIController::class);
 
 };
